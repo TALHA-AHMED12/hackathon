@@ -9,9 +9,9 @@ interface HeaderProps {
 
 export default function Footer({ font }: HeaderProps) {
   return (
-    <div className={`${font.className} h-[418px] max-w-full`}>
-
-      <div className="h-[343px] w-full flex justify-around items-center">
+    <div className={`${font.className} h-[418px]`}>
+      <hr />
+      <div className="h-[343px] w-full flex justify-center gap-24 items-center">
         <div className=" w-auto h-[198] flex flex-col gap-6 mt-[40px]">
           <div className=" w-[168px] h-[40] flex items-center justify-center gap-2">
             <Image src="/Logo-icon.png" alt="" width={40} height={40} />
@@ -138,15 +138,15 @@ export default function Footer({ font }: HeaderProps) {
 
       <hr />
 
-      <div className="w-full h-[75px] flex justify-between items-center">
+      <div className="w-full h-[75px] flex justify-around gap-42 items-center">
 
-      <div className="w-auto h-[21px] ml-28">
+      <div className="w-auto h-[21px]">
       <h1 className="font-normal">
       @ 2021 - Blogy - Designed & Develop by Zakirsoft
       </h1>
       </div>
 
-      <div className="mr-28 w-auto">
+      <div className="w-auto">
         <Image src="/paypal.png" alt="" width={227} height={27} />
       </div>
 

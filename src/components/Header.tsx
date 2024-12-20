@@ -9,9 +9,9 @@ interface HeaderProps {
 
 export default function Header({ font }: HeaderProps) {
     return (
-      <div className={`${font.className} max-w-full`}>
+      <div className={`${font.className} min-w-full`}>
 
-        <div className=" max-w-full h-[45px] bg-[#272343] flex justify-around items-center">
+        <div className=" w-auto h-[45px] bg-[#272343] flex justify-around items-center">
 
           <div className="flex justify-center items-center gap-3 ">
 
@@ -25,9 +25,9 @@ export default function Header({ font }: HeaderProps) {
               <i className="bi bi-chevron-down"></i>
             </button>
 
-            <button>
+            <Link href={"/faq"}>
             <h5 className="text-white">Faqs</h5>
-            </button>
+            </Link>
 
             <button className="flex gap-1 text-sm">
             <i className="bi bi-exclamation-circle text-white"></i>
@@ -37,7 +37,7 @@ export default function Header({ font }: HeaderProps) {
           </div>
         </div>
 
-        <div className="bg-[#F0F2F3] w-auto h-[84px] flex justify-around items-center -mx-24">
+        <div className="bg-[#F0F2F3] w-auto h-[84px] flex justify-around items-center">
 
           <div className=" w-[166px] h-[40] flex items-center justify-center gap-2">
             <Image src="/Logo-icon.png" alt="" width={40} height={40} />
@@ -59,13 +59,13 @@ export default function Header({ font }: HeaderProps) {
 
         </div>
 
-        <div className="w-full h-[74px] flex justify-around items-center">
+        <div className="w-auto h-[74px] flex justify-around items-center">
 
           <nav className="w-[339px] h-[15px] ">
             <ul className="flex gap-5">
-              <li className="text-[#636270]"><Link href="#">Home</Link></li>
+              <li className="text-[#636270]"><Link href="/">Home</Link></li>
               <li className="text-[#636270]"><Link href="#">Shop</Link></li>
-              <li className="text-[#636270]"><Link href="/">Product</Link></li>
+              <li className="text-[#636270]"><Link href="/product">Product</Link></li>
               <li className="text-[#636270]"><Link href="/">Pages</Link></li>
               <li className="text-[#636270]"><Link href="/">About</Link></li>
             </ul>
