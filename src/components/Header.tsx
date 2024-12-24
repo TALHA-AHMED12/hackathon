@@ -48,7 +48,7 @@ export default function Header({ font }: HeaderProps) {
 
           <div className="w-[120px] h-[44px]  bg-white flex items-center justify-center rounded-sm  ">
 
-            <Link href="#" className="flex  gap-2">
+            <Link href="/cart" className="flex  gap-2">
             <Image src="/group.png" alt="" width={17} height={17}/>
             Cart
             <Image src="/no.png" alt="" width={20} height={20}/>
@@ -64,17 +64,17 @@ export default function Header({ font }: HeaderProps) {
           <nav className="w-[339px] h-[15px] ">
             <ul className="flex gap-5">
               <li className="text-[#636270]"><Link href="/">Home</Link></li>
-              <li className="text-[#636270]"><Link href="#">Shop</Link></li>
+              <li className="text-[#636270]"><Link href="/shop">Shop</Link></li>
               <li className="text-[#636270]"><Link href="/product">Product</Link></li>
-              <li className="text-[#636270]"><Link href="/">Pages</Link></li>
-              <li className="text-[#636270]"><Link href="/">About</Link></li>
+              <li className="text-[#636270]"><Link href="/pages">Pages</Link></li>
+              <li className="text-[#636270]"><Link href="/about">About</Link></li>
             </ul>
           </nav>
 
-          <div className="flex gap-2 ">
+          <Link href={"/contact"} className="flex gap-2 ">
             <h5 className="text-[#636270]">Contact:</h5>
             <p className="text-[#272343]">(808) 555-0111</p>
-          </div>
+          </Link>
 
         </div>
         <hr />
