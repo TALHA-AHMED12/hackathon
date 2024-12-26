@@ -117,41 +117,48 @@ export default function Footer({ font }: HeaderProps) {
         </div>
 
         <div className="w-auto h-[142px] flex flex-col gap-6">
-
           <div>
             <h1 className="font-medium text-[#9A9CAA]">Newsletter</h1>
           </div>
 
           <div className="flex gap-1">
-              
-              <input  className="border-[#E1E3E5] py-3 pl-1" width="285" height="46" type="email" placeholder="Your email"/>
-              <button className="w-[127px] h-[46px] bg-[#029FAE] py-[14px] px-[24px] rounded-md" type="submit">Subscribe</button>
-              
+            <input
+              className="border-[#E1E3E5] py-3 pl-1"
+              width="285"
+              height="46"
+              type="email"
+              placeholder="Your email"
+            />
+            <button
+              className="w-[127px] h-[46px] bg-[#029FAE] py-[14px] px-[24px] rounded-md"
+              type="submit"
+            >
+              Subscribe
+            </button>
           </div>
 
           <div className="w-[428px] h-[46px]">
-            <p className=" font-normal text-[#272343]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
+            <p className=" font-normal text-[#272343]">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              tincidunt erat enim.
+            </p>
           </div>
-
         </div>
       </div>
 
       <hr />
 
       <div className="w-full h-[75px] flex justify-around gap-42 items-center">
+        <div className="w-auto h-[21px]">
+          <h1 className="font-normal">
+            @ 2021 - Blogy - Designed & Develop by Zakirsoft
+          </h1>
+        </div>
 
-      <div className="w-auto h-[21px]">
-      <h1 className="font-normal">
-      @ 2021 - Blogy - Designed & Develop by Zakirsoft
-      </h1>
+        <div className="w-auto">
+          <Image src="/paypal.png" alt="" width={227} height={27} />
+        </div>
       </div>
-
-      <div className="w-auto">
-        <Image src="/paypal.png" alt="" width={227} height={27} />
-      </div>
-
-      </div>
-
     </div>
   );
 }

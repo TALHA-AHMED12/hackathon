@@ -53,25 +53,26 @@ export default function About() {
       </div>
 
       <div className="flex flex-col gap-7 ">
-              <div className="h-[44px] ">
-                <h1 className="text-[#272343] font-[Inter] font-semibold text-3xl">Our Popular Products </h1>
-              </div>
-      
-              <div className="flex justify-between items-center gap-5">
-                <button>
-                  <Image src={"/ProductCard.png"} alt="" width={630} height={462} />
-                </button>
-      
-                <button>
-                  <Image src={"/ProductCard1.png"} alt="" width={305} height={462} />
-                </button>
-      
-                <button>
-                  <Image src={"/ProductCard2.png"} alt="" width={305} height={462} />
-                </button>
-    
-              </div>
-            </div>
+        <div className="h-[44px] ">
+          <h1 className="text-[#272343] font-[Inter] font-semibold text-3xl">
+            Our Popular Products{" "}
+          </h1>
+        </div>
+
+        <div className="flex justify-between items-center gap-5">
+          <button>
+            <Image src={"/ProductCard.png"} alt="" width={630} height={462} />
+          </button>
+
+          <button>
+            <Image src={"/ProductCard1.png"} alt="" width={305} height={462} />
+          </button>
+
+          <button>
+            <Image src={"/ProductCard2.png"} alt="" width={305} height={462} />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

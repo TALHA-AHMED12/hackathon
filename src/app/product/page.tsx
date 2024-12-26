@@ -112,7 +112,12 @@ export default function Product() {
             </button>
 
             <button>
-              <Image src={"/item-category 1.png"} alt="" width={186} height={186} />
+              <Image
+                src={"/item-category1.png"}
+                alt=""
+                width={186}
+                height={186}
+              />
             </button>
 
             <button>

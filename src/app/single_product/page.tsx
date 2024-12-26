@@ -33,39 +33,38 @@ export default function Single_product() {
           </div>
         </div>
       </div>
-       <div className=" flex flex-col gap-10 ">
-              <div className="flex justify-between items-center">
-                <div className=" ">
-                  <h1 className="text-[#272343] text-3xl">Featured Products</h1>
-                </div>
-                <button className="border-b-2 border-black">
-                  <h3 className="font-bold text-lg font-[Inter]">View all</h3>
-                </button>
-              </div>
-      
-              <div className="flex justify-between items-center gap-5">
-                <button>
-                  <Image src={"/Group 112.png"} alt="" width={190} height={206} />
-                </button>
-      
-                <button>
-                  <Image src={"/Group 113.png"} alt="" width={190} height={206} />
-                </button>
-      
-                <button>
-                  <Image src={"/Group 114.png"} alt="" width={190} height={206} />
-                </button>
-      
-                <button>
-                  <Image src={"/Group 115.png"} alt="" width={190} height={206} />
-                </button>
+      <div className=" flex flex-col gap-10 ">
+        <div className="flex justify-between items-center">
+          <div className=" ">
+            <h1 className="text-[#272343] text-3xl">Featured Products</h1>
+          </div>
+          <button className="border-b-2 border-black">
+            <h3 className="font-bold text-lg font-[Inter]">View all</h3>
+          </button>
+        </div>
 
-                <button>
-                  <Image src={"/Group 116.png"} alt="" width={190} height={206} />
-                </button>
+        <div className="flex justify-between items-center gap-5">
+          <button>
+            <Image src={"/Group112.png"} alt="" width={190} height={206} />
+          </button>
 
-              </div>
-            </div>
+          <button>
+            <Image src={"/Group113.png"} alt="" width={190} height={206} />
+          </button>
+
+          <button>
+            <Image src={"/Group114.png"} alt="" width={190} height={206} />
+          </button>
+
+          <button>
+            <Image src={"/Group115.png"} alt="" width={190} height={206} />
+          </button>
+
+          <button>
+            <Image src={"/Group116.png"} alt="" width={190} height={206} />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

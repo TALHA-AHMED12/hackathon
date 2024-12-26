@@ -13,7 +13,7 @@ export default function Cart() {
           <div className="h-[163px] w-[933px] flex justify-center items-center gap-5 ">
             <div>
               <Image
-                src={"/item-category 1.png"}
+                src={"/item-category1.png"}
                 alt=""
                 width={150}
                 height={150}
@@ -58,21 +58,21 @@ export default function Cart() {
                   </div>
                 </div>
                 <div>
-                    <h3 className="font-[Inter] font-normal text-base text-[#111111]">MRP: $99</h3>
+                  <h3 className="font-[Inter] font-normal text-base text-[#111111]">
+                    MRP: $99
+                  </h3>
                 </div>
-
               </div>
 
               <div className="w-[537px] h-[34px] flex gap-5 items-center">
-                  <div>
-                    <i className="bi bi-heart"></i>
-                  </div>
-
-                  <div>
-                    <i className="bi bi-trash3"></i>
-                  </div>
+                <div>
+                  <i className="bi bi-heart"></i>
                 </div>
 
+                <div>
+                  <i className="bi bi-trash3"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -80,12 +80,7 @@ export default function Cart() {
         <div className="h-[211px] w-[963px] flex justify-center items-center">
           <div className="h-[163px] w-[933px] flex justify-center items-center gap-5 ">
             <div>
-              <Image
-                src={"/Frame.png"}
-                alt=""
-                width={150}
-                height={150}
-              />
+              <Image src={"/Frame.png"} alt="" width={150} height={150} />
             </div>
 
             <div className="w-[753px] h-[163px] flex flex-col justify-around">
@@ -126,62 +121,61 @@ export default function Cart() {
                   </div>
                 </div>
                 <div>
-                    <h3 className="font-[Inter] font-normal text-base text-[#111111]">MRP: $99</h3>
+                  <h3 className="font-[Inter] font-normal text-base text-[#111111]">
+                    MRP: $99
+                  </h3>
                 </div>
-
               </div>
 
               <div className="w-[537px] h-[34px] flex gap-5 items-center">
-                  <div>
-                    <i className="bi bi-heart"></i>
-                  </div>
-
-                  <div>
-                    <i className="bi bi-trash3"></i>
-                  </div>
+                <div>
+                  <i className="bi bi-heart"></i>
                 </div>
 
+                <div>
+                  <i className="bi bi-trash3"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-
       </div>
       <div className="h-[295px] w-[350px] flex flex-col justify-center gap-7">
         <div>
           <h1 className="font-medium text-xl font-[Inter] text-[#111111]">
-          Summary
+            Summary
           </h1>
         </div>
         <div className="flex flex-col justify-center gap-5">
           <div className="flex justify-between items-center">
             <h3 className="font-normal text-base font-[Inter] text-[#111111]">
-            Subtotal
+              Subtotal
             </h3>
             <h3 className="font-normal text-base font-[Inter] text-[#111111]">
-            $198.00
+              $198.00
             </h3>
           </div>
           <div className="flex justify-between items-center">
-          <h3 className="font-normal text-base font-[Inter] text-[#111111]">
-          Estimated Delivery & Handling
+            <h3 className="font-normal text-base font-[Inter] text-[#111111]">
+              Estimated Delivery & Handling
             </h3>
             <h3 className="font-normal text-base font-[Inter] text-[#111111]">
-            Free
+              Free
             </h3>
           </div>
-          <hr/>
+          <hr />
           <div className="flex justify-between items-center">
-          <h3 className="font-normal text-base font-[Inter] text-[#111111]">
-          Total
+            <h3 className="font-normal text-base font-[Inter] text-[#111111]">
+              Total
             </h3>
             <h3 className="font-medium text-base font-[Inter] text-[#111111]">
-            $198.00
+              $198.00
             </h3>
           </div>
           <hr />
           <div>
             <button className="font-medium font-[Inter] text-base bg-[#029FAE] py-[18px] px-[100px] rounded-[30px] text-white">
-            Member Checkout
+              Member Checkout
             </button>
           </div>
         </div>

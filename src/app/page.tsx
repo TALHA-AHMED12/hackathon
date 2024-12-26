@@ -101,24 +101,19 @@ export default function Home() {
         </div> */}
 
         <div className="flex justify-center items-center gap-5">
-
           <div>
-
             <button>
               <Image
-                src={"/item-category 1.png"}
+                src={"/item-category1.png"}
                 alt=""
                 height={648}
                 width={648}
               />
             </button>
-
           </div>
 
           <div className="flex flex-col justify-center items-center gap-5">
-
             <div className="flex justify-center items-center gap-5">
-
               <button>
                 <Image src={"/card.png"} alt="" height={312} width={312} />
               </button>
@@ -126,11 +121,9 @@ export default function Home() {
               <button>
                 <Image src={"/card1.png"} alt="" height={312} width={312} />
               </button>
-
             </div>
 
-            <div  className="flex justify-center items-center gap-5">
-
+            <div className="flex justify-center items-center gap-5">
               <button>
                 <Image src={"/card3.png"} alt="" height={312} width={312} />
               </button>
@@ -138,16 +131,10 @@ export default function Home() {
               <button>
                 <Image src={"/card2.png"} alt="" height={312} width={312} />
               </button>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
-      
 
       <div className=" flex flex-col gap-5 ">
         <div className="h-[44px] ">
