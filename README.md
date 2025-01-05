@@ -20,7 +20,7 @@ To get started with this project, follow these steps:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/TALHA-AHMED-12/Hackathon.git
+    git clone https://github.com/TALHA-AHMED-12/hackathon.git
     cd ecommerce-website
     ```
 
