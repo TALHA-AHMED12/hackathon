@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce Website
+
+Welcome to my first e-commerce website project! This project was built using Sanity, Tailwind CSS, and Next.js.
+
+## Technologies Used
+
+- **Sanity**: A headless CMS to manage and deliver content.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Next.js**: A React framework for building server-side rendered applications.
+
+## Features
+
+- **Product Management**: Easily manage products using Sanity CMS.
+- **Responsive Design**: Styled with Tailwind CSS to ensure a responsive and modern design.
+- **Server-Side Rendering**: Utilizes Next.js for fast and efficient server-side rendering.
 
 ## Getting Started
 
-First, run the development server:
+To get started with this project, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/TALHA-AHMED-12/Hackathon.git
+    cd ecommerce-website
+    ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Set up Sanity**:
+    - Follow the [Sanity documentation](https://www.sanity.io/docs) to set up your Sanity project.
+    - Update the Sanity configuration in the project.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Run the development server**:
+    ```bash
+    npm run dev
+    ```
 
-## Learn More
+5. **Build for production**:
+    ```bash
+    npm run build
+    npm start
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you would like to contribute to this project, please fork the repository and submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For any questions or feedback, please contact me at [sheikhtalhaahmed098@gmail.com].
+
+Thank you for checking out my e-commerce website project!

@@ -9,154 +9,83 @@ interface HeaderProps {
 
 export default function Footer({ font }: HeaderProps) {
   return (
-    <div className={`${font.className} h-[418px]`}>
+    <div className={`${font.className}`}>
       <hr />
-      <div className="h-[343px] w-full flex justify-center gap-24 items-center">
-        <div className=" w-auto h-[198] flex flex-col gap-6 mt-[40px]">
-          <div className=" w-[168px] h-[40] flex items-center justify-center gap-2">
-            <Image src="/Logo-icon.png" alt="" width={40} height={40} />
-            <h1 className="text-3xl">Comforty</h1>
+      <div className="flex flex-wrap justify-center items-start gap-12 lg:gap-24 px-4 py-8">
+        {/* Logo and Socials Section */}
+        <div className="flex flex-col items-start gap-6 max-w-[350px]">
+          <div className="flex items-center gap-2">
+            <Image src="/Logo-icon.png" alt="Logo" width={40} height={40} />
+            <h1 className="text-2xl lg:text-3xl">Comforty</h1>
           </div>
-
-          <div className="w-[350px] h-[72px]">
-            <p className="font-normal text-base">
-              Vivamus tristique odio sit amet velit semper, eu posuere turpis
-              interdum. Cras egestas purus{" "}
-            </p>
-          </div>
-
-          <div className="w-[206px] h-[38px] flex justiify-center items-center gap-4">
-            <button>
-              <Image src="/facebook.png" alt="" width={16} height={16} />
-            </button>
-
-            <button>
-              <Image src="/twitter.png" alt="" width={16} height={16} />
-            </button>
-
-            <button>
-              <Image src="/instagram.png" alt="" width={16} height={16} />
-            </button>
-
-            <button>
-              <Image src="/pinterest.png" alt="" width={16} height={16} />
-            </button>
-
-            <button>
-              <Image src="/youtube.png" alt="" width={16} height={16} />
-            </button>
+          <p className="text-sm lg:text-base text-gray-600">
+            Vivamus tristique odio sit amet velit semper, eu posuere turpis interdum. Cras egestas purus.
+          </p>
+          <div className="flex gap-3">
+            {["facebook", "twitter", "instagram", "pinterest", "youtube"].map((icon) => (
+              <button key={icon}>
+                <Image src={`/${icon}.png`} alt={icon} width={16} height={16} />
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="w-auto h-[203] flex flex-col gap-6 mt-[40px]">
-          <h1 className="text-[#9A9CAA] font-medium w-[82px] h-[15px]">
-            Category
-          </h1>
-
-          <ul className="flex flex-col gap-1`">
-            <li>
-              <Link href="">Sofa</Link>
-            </li>
-            <li>
-              <Link className="text-[#272343] font-normal" href="/">
-                Armchair
-              </Link>
-            </li>
-            <li>
-              <Link className="text-[#272343] font-normal" href="/">
-                Wing Chair
-              </Link>
-            </li>
-            <li>
-              <Link className="text-[#272343] font-normal" href="/">
-                Desk Chair
-              </Link>
-            </li>
-            <li>
-              <Link className="text-[#272343] font-normal" href="/">
-                wooden Chair
-              </Link>
-            </li>
-            <li>
-              <Link className="text-[#272343] font-normal" href="/">
-                Park Bench
-              </Link>
-            </li>
+        {/* Category Section */}
+        <div className="flex flex-col gap-4">
+          <h1 className="text-gray-500 text-sm lg:text-base font-medium">Category</h1>
+          <ul className="flex flex-col gap-2 text-sm lg:text-base">
+            {["Sofa", "Armchair", "Wing Chair", "Desk Chair", "Wooden Chair", "Park Bench"].map((item) => (
+              <li key={item}>
+                <Link href="/" className="text-gray-800">
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="w-auto h-[143px] flex flex-col gap-6">
-          <div>
-            <h1 className="font-medium text-[#9A9CAA] ">Support</h1>
-          </div>
-
-          <div>
-            <ul className="flex flex-col gap-1">
-              <li>
-                <Link className="font-normal text-base text-[#272343]" href="/">
-                  Help & Support
+        {/* Support Section */}
+        <div className="flex flex-col gap-4">
+          <h1 className="text-gray-500 text-sm lg:text-base font-medium">Support</h1>
+          <ul className="flex flex-col gap-2 text-sm lg:text-base">
+            {["Help & Support", "Terms & Conditions", "Privacy Policy", "Help"].map((item) => (
+              <li key={item}>
+                <Link href="/" className="text-gray-800">
+                  {item}
                 </Link>
               </li>
-              <li>
-                <Link className="font-normal text-base text-[#272343]" href="/">
-                  Tearms & Conditions
-                </Link>
-              </li>
-              <li>
-                <Link className="font-normal text-base text-[#272343]" href="/">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link className="font-normal text-base text-[#272343]" href="/">
-                  Help
-                </Link>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
 
-        <div className="w-auto h-[142px] flex flex-col gap-6">
-          <div>
-            <h1 className="font-medium text-[#9A9CAA]">Newsletter</h1>
-          </div>
-
-          <div className="flex gap-1">
+        {/* Newsletter Section */}
+        <div className="flex flex-col gap-4 max-w-[350px]">
+          <h1 className="text-gray-500 text-sm lg:text-base font-medium">Newsletter</h1>
+          <div className="flex gap-2">
             <input
-              className="border-[#E1E3E5] py-3 pl-1"
-              width="285"
-              height="46"
+              className="border border-gray-300 rounded-md py-2 px-3 flex-1"
               type="email"
               placeholder="Your email"
             />
-            <button
-              className="w-[127px] h-[46px] bg-[#029FAE] py-[14px] px-[24px] rounded-md"
-              type="submit"
-            >
+            <button className="bg-teal-500 text-white py-2 px-4 rounded-md">
               Subscribe
             </button>
           </div>
-
-          <div className="w-[428px] h-[46px]">
-            <p className=" font-normal text-[#272343]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              tincidunt erat enim.
-            </p>
-          </div>
+          <p className="text-sm lg:text-base text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.
+          </p>
         </div>
       </div>
 
       <hr />
 
-      <div className="w-full h-[75px] flex justify-around gap-42 items-center">
-        <div className="w-auto h-[21px]">
-          <h1 className="font-normal">
-            @ 2021 - Blogy - Designed & Develop by Zakirsoft
-          </h1>
-        </div>
-
-        <div className="w-auto">
-          <Image src="/paypal.png" alt="" width={227} height={27} />
+      {/* Footer Bottom */}
+      <div className="flex flex-wrap justify-around items-center gap-4 px-4 py-4">
+        <p className="text-sm text-gray-600 text-center">
+          @ 2021 - Blogy - Designed & Developed by Zakirsoft
+        </p>
+        <div className="flex justify-center">
+          <Image src="/paypal.png" alt="Paypal" width={227} height={27} />
         </div>
       </div>
     </div>
