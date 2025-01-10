@@ -1,28 +1,27 @@
 import Image from "next/image";
+
 export default function Single_product() {
   return (
-    <div className="flex flex-col justify-around items-center gap-20 mt-24 mb-24">
-      <div className="flex justify-center gap-24">
+    <div className="flex flex-col justify-around items-center gap-10 md:gap-20 mt-12 md:mt-24 mb-12 md:mb-24 px-4">
+      <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-24">
         <div>
-          <Image src={"/image45.png"} alt="" height={507} width={575} />
+          <Image src="/image45.png" alt="" height={507} width={575} className="w-full h-auto" />
         </div>
-        <div className="flex flex-col justify-between h-[425px]">
+        <div className="flex flex-col mt-11 justify-between sm:gap-7 h-auto md:h-[425px]">
           <div>
-            <h1 className="font-bold font-[Inter] w-[341px] text-5xl ">
+            <h1 className="font-bold font-[Inter] text-3xl md:text-5xl">
               Library Stool Chair
             </h1>
           </div>
           <div>
-            <h5 className="text-white  bg-[#029FAE] w-[120px] py-[6px] text-center font-semibold text-base rounded-[100px]">
+            <h5 className="text-white bg-[#029FAE] w-[120px] py-[6px] text-center font-semibold text-base rounded-[100px]">
               $20.00 USD
             </h5>
           </div>
           <hr />
-          <div className="h-[101px] w-[343px]">
+          <div className="h-auto md:h-[101px] w-full md:w-[343px]">
             <p className="font-normal text-sm">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              tincidunt erat enim. Lorem ipsum dolor sit amet, consectetur
-              adipiscing
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim. Lorem ipsum dolor sit amet, consectetur adipiscing
             </p>
           </div>
           <div>
@@ -33,36 +32,20 @@ export default function Single_product() {
           </div>
         </div>
       </div>
-      <div className=" flex flex-col gap-10 ">
-        <div className="flex justify-between items-center">
-          <div className=" ">
-            <h1 className="text-[#272343] text-3xl">Featured Products</h1>
-          </div>
+      <div className="flex flex-col gap-5 md:gap-10 w-full">
+        <div className="flex justify-around items-center">
+          <h1 className="text-[#272343] text-2xl md:text-3xl">Featured Products</h1>
           <button className="border-b-2 border-black">
             <h3 className="font-bold text-lg font-[Inter]">View all</h3>
           </button>
         </div>
 
-        <div className="flex justify-between items-center gap-5">
-          <button>
-            <Image src={"/Group112.png"} alt="" width={190} height={206} />
-          </button>
-
-          <button>
-            <Image src={"/Group113.png"} alt="" width={190} height={206} />
-          </button>
-
-          <button>
-            <Image src={"/Group114.png"} alt="" width={190} height={206} />
-          </button>
-
-          <button>
-            <Image src={"/Group115.png"} alt="" width={190} height={206} />
-          </button>
-
-          <button>
-            <Image src={"/Group116.png"} alt="" width={190} height={206} />
-          </button>
+        <div className="flex flex-wrap justify-center items-center gap-2">
+          {["/Group112.png", "/Group113.png", "/Group114.png", "/Group115.png", "/Group116.png"].map((src, index) => (
+            <button key={index} className="w-full sm:w-auto">
+              <Image src={src} alt={`featured ${index + 1}`} width={190} height={206} className="w-full h-auto" />
+            </button>
+          ))}
         </div>
       </div>
     </div>

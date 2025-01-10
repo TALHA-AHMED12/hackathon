@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Cart() {
   return (
-    <div className="flex justify-center mt-24">
+    <div className="flex justify-center mt-24 px-4">
       <div className="h-[547px]  flex flex-col">
         <div>
           <h1 className="font-[Inter] font-medium text-2xl text-[#111111]">
@@ -9,8 +9,8 @@ export default function Cart() {
           </h1>
         </div>
 
-        <div className="h-[211px] w-[963px] flex justify-center items-center">
-          <div className="h-[163px] w-[933px] flex justify-center items-center gap-5 ">
+        <div className="h-auto w-full flex justify-center items-center pt-5">
+          <div className="h-auto w-full flex justify-center items-center gap-5 ">
             <div>
               <Image
                 src={"/item-category1.png"}
@@ -77,7 +77,7 @@ export default function Cart() {
           </div>
         </div>
         <hr />
-        <div className="h-[211px] w-[963px] flex justify-center items-center">
+        <div className="h-auto w-full flex justify-centerz items-center">
           <div className="h-[163px] w-[933px] flex justify-center items-center gap-5 ">
             <div>
               <Image src={"/Frame.png"} alt="" width={150} height={150} />
