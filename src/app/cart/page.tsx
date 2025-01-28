@@ -1,146 +1,92 @@
+'use client';
+
 import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { useCart } from '@/context/CartContext';
+import { toast } from 'react-hot-toast';
+
 export default function Cart() {
+  const { 
+    cart, 
+    removeFromCart, 
+    updateQuantity, 
+    getTotalPrice 
+  } = useCart();
+
+  const handleRemoveItem = (productId: string) => {
+    removeFromCart(productId);
+    toast.success('Item removed from cart');
+  };
+
+  const handleUpdateQuantity = (productId: string, newQuantity: number) => {
+    if (newQuantity > 0) {
+      updateQuantity(productId, newQuantity);
+    }
+  };
+
   return (
-    <div className="flex justify-center mt-24 px-4">
-      <div className="h-[547px]  flex flex-col">
+    <div className="flex flex-col lg:flex-row justify-center gap-5 mt-24 mb-32 px-4">
+      <div className="flex flex-col gap-5 w-full lg:w-2/3">
         <div>
           <h1 className="font-[Inter] font-medium text-2xl text-[#111111]">
-            Bag
+            Bag {cart.length === 0 && "(Empty)"}
           </h1>
         </div>
 
-        <div className="h-auto w-full flex justify-center items-center pt-5">
-          <div className="h-auto w-full flex justify-center items-center gap-5 ">
-            <div>
-              <Image
-                src={"/item-category1.png"}
-                alt=""
-                width={150}
-                height={150}
+        {cart.map((item) => (
+          <div
+            key={item._id}
+            className="flex flex-col md:flex-row border-b justify-between items-center gap-5 p-4 "
+          >
+            <div className="flex gap-5 items-center">
+              <Image 
+                src={urlFor(item.image).url()} 
+                alt={item.title} 
+                width={150} 
+                height={150} 
               />
+              <div className="flex flex-col gap-2 md:gap-5">
+                <h3 className="text-[#272343] font-normal text-base">
+                  {item.title}
+                </h3>
+                <div className="flex gap-3">
+                  <div className="flex items-center gap-2">
+                    <button 
+                      onClick={() => handleUpdateQuantity(item._id, item.quantity - 1)}
+                      className="bg-gray-200 px-2 rounded"
+                    >
+                      -
+                    </button>
+                    <p>{item.quantity}</p>
+                    <button 
+                      onClick={() => handleUpdateQuantity(item._id, item.quantity + 1)}
+                      className="bg-gray-200 px-2 rounded"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div className="flex gap-5 items-center mt-4 md:mt-0">
+                  <button 
+                    onClick={() => handleRemoveItem(item._id)}
+                    className="text-red-500"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div className="w-[753px] h-[163px] flex flex-col justify-around">
-              <div className="h-[105px] w-[687px] flex justify-between items-center">
-                <div className="h-[105px] w-[235px] flex flex-col gap-5">
-                  <div>
-                    <h3 className="text-[#272343] font-normal text-base">
-                      Library Stool Chair
-                    </h3>
-                  </div>
-
-                  <div>
-                    <p className="text-[#757575] font-normal text-base">
-                      Ashen Slate/Cobalt Bliss
-                    </p>
-
-                    <div className="h-[28px] w-[235px] flex">
-                      <div className="h-[28px] w-[97px] flex gap-3">
-                        <p className="text-[#757575] font-normal text-base w-[30px] h-[28px]">
-                          Size
-                        </p>
-
-                        <p className="text-[#757575] font-normal text-base w-[67px] h-[28px]">
-                          L
-                        </p>
-                      </div>
-
-                      <div className="w-[118px] h-[28px] flex gap-3">
-                        <p className="text-[#757575] font-normal text-base w-[61px] h-[28px]">
-                          Quantity
-                        </p>
-
-                        <p className="text-[#757575] font-normal text-base w-[58px] h-[28px]">
-                          1
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-[Inter] font-normal text-base text-[#111111]">
-                    MRP: $99
-                  </h3>
-                </div>
-              </div>
-
-              <div className="w-[537px] h-[34px] flex gap-5 items-center">
-                <div>
-                  <i className="bi bi-heart"></i>
-                </div>
-
-                <div>
-                  <i className="bi bi-trash3"></i>
-                </div>
-              </div>
+            <div className="flex flex-col justify-around w-full md:w-auto">
+              <h3 className="font-[Inter] font-normal text-base text-[#111111]">
+                MRP: ${(item.price * item.quantity).toFixed(2)}
+              </h3>
             </div>
           </div>
-        </div>
-        <hr />
-        <div className="h-auto w-full flex justify-centerz items-center">
-          <div className="h-[163px] w-[933px] flex justify-center items-center gap-5 ">
-            <div>
-              <Image src={"/Frame.png"} alt="" width={150} height={150} />
-            </div>
-
-            <div className="w-[753px] h-[163px] flex flex-col justify-around">
-              <div className="h-[105px] w-[687px] flex justify-between items-center">
-                <div className="h-[105px] w-[235px] flex flex-col gap-5">
-                  <div>
-                    <h3 className="text-[#272343] font-normal text-base">
-                      Library Stool Chair
-                    </h3>
-                  </div>
-
-                  <div>
-                    <p className="text-[#757575] font-normal text-base">
-                      Ashen Slate/Cobalt Bliss
-                    </p>
-
-                    <div className="h-[28px] w-[235px] flex">
-                      <div className="h-[28px] w-[97px] flex gap-3">
-                        <p className="text-[#757575] font-normal text-base w-[30px] h-[28px]">
-                          Size
-                        </p>
-
-                        <p className="text-[#757575] font-normal text-base w-[67px] h-[28px]">
-                          L
-                        </p>
-                      </div>
-
-                      <div className="w-[118px] h-[28px] flex gap-3">
-                        <p className="text-[#757575] font-normal text-base w-[61px] h-[28px]">
-                          Quantity
-                        </p>
-
-                        <p className="text-[#757575] font-normal text-base w-[58px] h-[28px]">
-                          1
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-[Inter] font-normal text-base text-[#111111]">
-                    MRP: $99
-                  </h3>
-                </div>
-              </div>
-
-              <div className="w-[537px] h-[34px] flex gap-5 items-center">
-                <div>
-                  <i className="bi bi-heart"></i>
-                </div>
-
-                <div>
-                  <i className="bi bi-trash3"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
-      <div className="h-[295px] w-[350px] flex flex-col justify-center gap-7">
+
+      <div className="flex flex-col justify-center gap-7 w-full lg:w-1/3 mt-12 lg:mt-0">
         <div>
           <h1 className="font-medium text-xl font-[Inter] text-[#111111]">
             Summary
@@ -152,7 +98,7 @@ export default function Cart() {
               Subtotal
             </h3>
             <h3 className="font-normal text-base font-[Inter] text-[#111111]">
-              $198.00
+              ${getTotalPrice().toFixed(2)}
             </h3>
           </div>
           <div className="flex justify-between items-center">
@@ -169,12 +115,19 @@ export default function Cart() {
               Total
             </h3>
             <h3 className="font-medium text-base font-[Inter] text-[#111111]">
-              $198.00
+              ${getTotalPrice().toFixed(2)}
             </h3>
           </div>
           <hr />
           <div>
-            <button className="font-medium font-[Inter] text-base bg-[#029FAE] py-[18px] px-[100px] rounded-[30px] text-white">
+            <button 
+              disabled={cart.length === 0}
+              className={`font-medium font-[Inter] text-base py-[18px] px-[100px] rounded-[30px] text-white ${
+                cart.length === 0 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-[#029FAE]'
+              }`}
+            >
               Member Checkout
             </button>
           </div>

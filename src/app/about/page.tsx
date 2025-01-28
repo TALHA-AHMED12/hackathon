@@ -42,15 +42,13 @@ export default function About() {
 
         <div className="flex flex-wrap justify-center md:justify-around items-center gap-2">
           {["/feature.png", "/feature1.png", "/feature2.png", "/feature3.png"].map((src, index) => (
-            <button key={index} className="w-full sm:w-auto">
-              <Image 
+            
+              <Image key={index}
                 src={src} 
                 alt={`feature ${index + 1}`} 
                 width={312} 
                 height={377}
-                className="w-full h-auto" 
               />
-            </button>
           ))}
         </div>
       </div>

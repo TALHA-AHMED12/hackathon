@@ -1,38 +1,81 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Producte } from "../../types/data";
+import {client} from "@/sanity/lib/client"
 
-export default function Product() {
+ const getProducts = async ()=>{
+  const products = await client.fetch(
+          `
+          *[_type=="products"]{
+        _id,
+          title,
+          description,
+          priceWithoutDiscount,
+          badge,
+          price,
+          "image":image.asset->url
+      }
+          `
+  )
+  return products
+
+}
+
+export default async function Product() {
+  const products:Producte[] = await getProducts()
+
+// export default function Product() {
+  // useSelector((state) => state);
   return (
-    <div className="flex flex-col gap-12 md:gap-24 justify-center items-center mt-12 md:mt-24 px-4">
-      <div className="w-full max-w-[1320px] flex flex-col gap-5">
+    <div className="flex flex-col justify-center items-center mt-12 md:mt-24 px-4">
+      <div className="w-full max-w-[1320px] flex flex-col gap-10">
         <div className="text-center md:text-left">
           <h1 className="text-[#272343] text-2xl md:text-3xl font-semibold">
             All Products
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-around items-center gap-2">
-          {["/products.png", "/products1.png", "/products2.png", "/products3.png"].map((src, index) => (
-            <button key={index} className="w-full sm:w-auto">
-              <Image src={src} alt={`product ${index + 1}`} width={312} height={377} className="w-full h-auto" />
-            </button>
-          ))}
+        <div className="flex flex-wrap justify-around items-center gap-2">
+          {products.map((items:Producte) => {
+            return (
+              <div key={items._id} className="bg-white rounded-lg overflow-hidden pb-28 max-w-sm">
+                <div className="relative">
+                  <Image
+                    className=""
+                    src={items.image}
+                    alt={`logo${items.image}`}
+                    width={312}
+                    height={312}
+                  />
+                  <div className="absolute top-3 left-3 bg-[#F5813F] text-white px-2 py-1  rounded-md font-[Inter] text-sm font-medium">
+                    {items.badge}
+                  </div>
+                </div>
+                <div className="p-1">
+                  {/* <h3 className="text-base font-normal font-[Inter] mb-2 text-[#272343] hover:text-[#007580]">Library Stool Chair</h3> */}
+
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="text-base font-normal font-[Inter] text-[#272343] hover:text-[#007580]">
+                        {items.title}
+                      </h3>
+
+                      <span className="font-[Inter] text-[#272343] text-lg">
+                        {`$${items.price}`}
+                      </span>
+                    </div>
+                    <Link
+                          href={`/single_product/${items._id}`} 
+                      className="bg-[#F0F2F3] hover:bg-[#029FAE] py-2 px-4 rounded"
+                    >
+                      <i className="bi bi-cart"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </div>
-
-      <div className="w-full max-w-[1320px] flex flex-wrap justify-center md:justify-around items-center gap-2">
-        {["/12.png", "/product1.png", "/product2.png", "/product3.png"].map((src, index) => (
-          <button key={index} className="w-full sm:w-auto">
-            <Image src={src} alt={`product ${index + 1}`} width={312} height={377} className="w-full h-auto" />
-          </button>
-        ))}
-      </div>
-
-      <div className="w-full max-w-[1320px] flex flex-wrap justify-center md:justify-around items-center gap-2">
-        {["/product.png", "/products1.png", "/products2.png", "/13.png"].map((src, index) => (
-          <button key={index} className="w-full sm:w-auto">
-            <Image src={src} alt={`product ${index + 1}`} width={312} height={377} className="w-full h-auto" />
-          </button>
-        ))}
       </div>
 
       <div className="w-full bg-[#1E28320D] flex flex-col justify-center items-center gap-12 md:gap-20 py-12 md:py-20">
@@ -62,14 +105,27 @@ export default function Product() {
           </h1>
         </div>
 
-        <div className="flex flex-wrap justify-center md:justify-around items-center gap-1">
-          {["/1.png", "/2.png", "/3.png", "/card1.png", "/item-category1.png", "/4.png"].map((src, index) => (
-            <button key={index} className="w-full sm:w-auto">
-              <Image src={src} alt={`instagram ${index + 1}`} width={186} height={186} className="w-full h-auto" />
-            </button>
+        <div className="flex flex-wrap justify-center md:justify-around items-center gap-3">
+          {[
+            "/card3.png",
+            "/inage.png",
+            "/Image.png",
+            "/card2.png",
+            "/item-category1.png",
+            "/line.png",
+          ].map((src, index) => (
+            <Image
+              key={index}
+              src={src}
+              alt={`instagram ${index + 1}`}
+              width={186}
+              height={186}
+            />
           ))}
         </div>
       </div>
     </div>
   );
 }
+
+

@@ -1,3 +1,4 @@
+import AddToCartNum from "@/actions/AddToCartNum";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +9,7 @@ interface HeaderProps {
 }
 
 export default function Header({ font }: HeaderProps) {
+
   return (
     <div className={`${font.className} min-w-full`}>
       <div className="w-auto h-auto bg-[#272343] flex flex-col md:flex-row justify-around items-center p-2 md:p-0">
@@ -36,11 +38,7 @@ export default function Header({ font }: HeaderProps) {
           <h1 className="text-3xl">Comforty</h1>
         </div>
         <div className="w-full py-2 md:w-[120px] h-auto bg-white flex items-center justify-center rounded-sm">
-          <Link href="/cart" className="flex gap-2">
-            <Image src="/group.png" alt="" width={17} height={17} />
-            Cart
-            <Image src="/no.png" alt="" width={20} height={20} />
-          </Link>
+        <AddToCartNum/>
         </div>
       </div>
 

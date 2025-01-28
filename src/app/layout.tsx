@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "bootstrap-icons/font/bootstrap-icons.css"
 import {Inter} from "next/font/google"
+import { CartProvider } from "@/context/CartContext";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({subsets:["latin"]})
 // const geistSans = localFont({
@@ -33,9 +35,13 @@ export default function RootLayout({
       <body
         className={inter.className}
       >
+        <CartProvider>
         <Header font = {inter} />
         {children}
         <Footer font = {inter}/>
+        <Toaster position="top-right" />
+        </CartProvider>
+        
       </body>
     </html>
   );
