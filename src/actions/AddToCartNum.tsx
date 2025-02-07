@@ -10,7 +10,7 @@ export default function AddToCartNum() {
       <i className="bi bi-cart mr-2"></i>
       Cart
       {cart.length > 0 && (
-        <span className="bg-[#029FAE] text-white rounded-full px-3 py-1 font-medium font-[Inter] text-sm">
+        <span className="bg-[#029FAE] text-white rounded-full py-1 px-2 font-medium font-[Inter] text-sm">
           {cart.length}
         </span>
       )}

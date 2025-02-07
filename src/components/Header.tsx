@@ -60,6 +60,9 @@ export default function Header({ font }: HeaderProps) {
             <li className="text-[#636270]">
               <Link href="/about">About</Link>
             </li>
+            <li className="text-[#636270]">
+              <Link href="/dashboard">Admin</Link>
+            </li>
           </ul>
         </nav>
         <Link href={"/contact"} className="flex py-4 gap-2">

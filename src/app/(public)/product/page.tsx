@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Producte } from "../../types/data";
+import { Producte } from "../../../types/data";
 import {client} from "@/sanity/lib/client"
 
  const getProducts = async ()=>{

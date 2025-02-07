@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import "bootstrap-icons/font/bootstrap-icons.css"
-import {Inter} from "next/font/google"
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { Inter } from "next/font/google";
 import { CartProvider } from "@/context/CartContext";
 import { Toaster } from "react-hot-toast";
 
-const inter = Inter({subsets:["latin"]})
+const inter = Inter({ subsets: ["latin"] });
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
 //   variable: "--font-geist-sans",
@@ -31,18 +31,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={inter.className}
-      >
-        <CartProvider>
-        <Header font = {inter} />
-        {children}
-        <Footer font = {inter}/>
-        <Toaster position="top-right" />
-        </CartProvider>
-        
-      </body>
-    </html>
+      <html lang="en">
+        <body className={inter.className}>
+            <CartProvider>
+              <Header font={inter} />
+              {children}
+              <Footer font={inter} />
+              <Toaster position="top-right" />
+            </CartProvider>
+        </body>
+      </html>
   );
 }

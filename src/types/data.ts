@@ -8,6 +8,9 @@ export interface Producte {
     image: string;
     description:string;
     badge:string
+    category:string;
+    inventory:number;
+    products:string;
   };
 
 // cart data type

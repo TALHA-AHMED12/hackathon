@@ -4,6 +4,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { useCart } from '@/context/CartContext';
 import { toast } from 'react-hot-toast';
+import Link from "next/link";
 
 export default function Cart() {
   const { 
@@ -120,16 +121,21 @@ export default function Cart() {
           </div>
           <hr />
           <div>
-            <button 
-              disabled={cart.length === 0}
-              className={`font-medium font-[Inter] text-base py-[18px] px-[100px] rounded-[30px] text-white ${
-                cart.length === 0 
-                  ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-[#029FAE]'
-              }`}
-            >
-              Member Checkout
-            </button>
+          <Link 
+  href="/checkout"
+  className={`font-medium font-[Inter] text-base py-[18px] px-[100px] rounded-[30px] text-white ${
+    cart.length === 0 
+      ? 'bg-gray-400 cursor-not-allowed' 
+      : 'bg-[#029FAE]'
+  }`}
+  onClick={(e) => {
+    if (cart.length === 0) {
+      e.preventDefault();
+    }
+  }}
+>
+  Member Checkout
+</Link>
           </div>
         </div>
       </div>

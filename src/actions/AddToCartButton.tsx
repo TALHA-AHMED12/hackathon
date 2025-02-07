@@ -30,7 +30,7 @@ export function AddToCartButton({ product }: { product: Producte }) {
       onClick={handleAddToCart}
       disabled={isAdding}
       className={`
-       bg-[#029FAE] font-semibold text-lg text-center text-white rounded-lg w-[212px] h-[63px]
+       bg-[#029FAE] font-semibold text-lg text-center text-white rounded-lg w-full py-2
         ${isAdding ? "opacity-50 cursor-not-allowed" : "hover:bg-[#037e8c]"}
       `}
     >
