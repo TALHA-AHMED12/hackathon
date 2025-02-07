@@ -273,7 +273,7 @@ export default function Checkout() {
                 type="submit"
                 className="w-full bg-[#029FAE] text-white py-2 px-4 rounded hover:bg-[#028a96]"
               >
-                {selectedPaymentMethod === 'Online Payment' ? 'Proceed to Payment' : 'Place Order'}
+                Place Order
               </button>
               <button
                 type="button"
