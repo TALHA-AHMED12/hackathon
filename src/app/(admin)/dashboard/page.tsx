@@ -1,5 +1,5 @@
 import { FiBox, FiShoppingCart, FiUsers, FiDollarSign, FiSettings, FiHome } from 'react-icons/fi';
-import AdminSidebar from '@/components/AdminSidebar';
+// import AdminSidebar from '@/components/AdminSidebar';
 import Link from 'next/link';
 
 const AdminDashboard = () => {

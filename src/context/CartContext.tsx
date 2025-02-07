@@ -7,7 +7,7 @@ interface CartItem {
   title: string;
   price: number;
   quantity: number;
-  image: any; // Update this type based on your Sanity image type
+  image: string; // Update this type based on your Sanity image type
 }
 
 interface CartContextType {

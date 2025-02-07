@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
-import { PaymentElement } from "@stripe/react-stripe-js";
-import { useStripe, useElements } from "@stripe/react-stripe-js";
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+// import { PaymentElement } from "@stripe/react-stripe-js";
+// import { useStripe, useElements } from "@stripe/react-stripe-js";
+// import { Elements } from '@stripe/react-stripe-js';
+// import { loadStripe } from '@stripe/stripe-js';
 
 type CheckoutStep = 'shipping' | 'payment' | 'confirmation';
 // type PaymentMethod = 'Cash on Delivery' | 'Online Payment';
@@ -34,9 +34,9 @@ interface ShippingInfo {
 }
 
 export default function Checkout() {
-  const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
-  const [errors, setErrors] = useState("")
-    const [clientSecret, setClientSecret] = useState("")
+  // const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+  // const [errors, setErrors] = useState("")
+  //   const [clientSecret, setClientSecret] = useState("")
     // const stripe = useStripe()
     // const elements = useElements()
   const { cart, getTotalPrice, clearCart } = useCart();
@@ -302,7 +302,7 @@ export default function Checkout() {
                   {orderConfirmation.shippingInfo.address}<br />
                   {orderConfirmation.shippingInfo.city}, {orderConfirmation.shippingInfo.postalCode}
                 </p>
-                 <p className="mt-2">Payment Method: "Cash On Delivery"</p> 
+                 <p className="mt-2">Payment Method:{"Cash On Delivery"}</p> 
                  {/* <p className="font-medium mt-2">
                   {orderConfirmation.paymentMethod === 'Online Payment' 
                     ? 'Payment Successfully Received'

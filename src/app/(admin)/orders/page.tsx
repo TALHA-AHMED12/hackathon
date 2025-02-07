@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { FiBox, FiShoppingCart, FiUsers, FiDollarSign, FiSettings, FiHome, FiEdit, FiCheck } from 'react-icons/fi';
+import { FiBox, FiShoppingCart, FiUsers, FiSettings, FiHome, FiEdit, FiCheck } from 'react-icons/fi';
 import Link from 'next/link';
 
 interface Order {
